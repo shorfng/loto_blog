@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <!--
   Author：蓝田_Loto
   Date：2019-12-19 0:00
   PageName：index.html
-  Function：
+  Function：首页
 -->
 
 <head>
@@ -14,6 +14,6 @@
 </head>
 
 <body>
-这是启动页!
+<h1 th:text="|Hello ${userLoginName}|"></h1>
 </body>
 </html>

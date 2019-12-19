@@ -1,0 +1,21 @@
+# 默认到resource/templates目录下寻找
+# http://localhost/loto/index
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    check-template-location: true
+    encoding: UTF-8
+    servlet.content-type: text/html
+    cache: false
+    mode: HTML
+
+userLoginName: TD
+
+# 解决静态文件中文乱码（暂未解决）
+#spring.http.encoding.force=true
+#spring.http.encoding.charset=UTF-8
+#spring.http.encoding.enabled=true
+#server.tomcat.uri-encoding=UTF-8
+
+

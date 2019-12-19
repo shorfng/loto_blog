@@ -1,6 +1,8 @@
 package com.loto.blog.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -13,8 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class HomeController {
+    @Value("${userLoginName}")
+    private String userLoginName;
+
     /**
      * 第一个接口
+     *
      * @return 返回字符串
      */
     @RequestMapping("/home")
@@ -24,10 +30,13 @@ public class HomeController {
 
     /**
      * 访问第一个html页面
+     *
      * @return 返回字符串
      */
     @RequestMapping("/index")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("userLoginName", userLoginName);
         return "/index";
     }
+
 }
